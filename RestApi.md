@@ -2,9 +2,6 @@
 
 REST, client-server arasındaki haberleşmeyi sağlayan ,web servislerinin nasıl oluşturulmasu gerektiğini tanımlayan bir mimari tarzıdır .REST mimarisi HTTP protokolü üzerine kuruludur. İstemci ve sunucu arasında XML ve JSON verilerini taşıyarak uygulamanın haberleşmesini sağlar.
 
-Amazon, Google, Facebook, LinkedIn ve Twitter gibi web siteleri, kullanıcıların bu bulut hizmetleriyle iletişim kurmasını sağlayan REST tabanlı API’leri kullanır.
-
-
 ## REST API’nin Temel Özellikleri
 
 - Daha az bant genişliği ve kaynak tükettikleri için hızlı web servisleridir.  
@@ -36,6 +33,8 @@ REST mimarisi; kaynak odaklı, basit ve HTTP protokolü üzerine kurulu bir yap�
 
 - **Katmanlı Sistem (Layered System):**  
   Sistemin bileşenleri katmanlara ayrılabilir (örneğin: güvenlik katmanı, yük dengeleme katmanı vb.). İstemci, sunucuya doğrudan mı yoksa ara katmanlar aracılığıyla mı eriştiğini bilmez.
+
+
 
 ## HTTP Protokolü ve REST API İlişkisi
 
@@ -79,6 +78,45 @@ REST API, istemci (client) ile sunucu (server) arasında HTTP protokolü aracıl
    İstemci, sunucudan dönen yanıtı kullanıcıya sunar ya da arka planda kullanır.
 
 Bu yapı sayesinde REST API’ler, basit, anlaşılır ve platformdan bağımsız olarak çalışabilir hale gelir.
+
+  <img width="643" height="351" alt="Image" src="https://github.com/user-attachments/assets/2b5d3899-7ee4-4db6-93b1-a2f147598ef6" />
+
+  ## REST API’nin Avantajları ve Dezavantajları
+
+### Avantajları
+
+- **Basit ve Hafif:** REST, HTTP protokolünün standartlarını kullanır; bu nedenle öğrenmesi ve uygulaması kolaydır.  
+- **Platform Bağımsızlığı:** REST API’ler herhangi bir programlama dili ve platformda çalışabilir.  
+- **Ölçeklenebilirlik:** Durumsuz (stateless) yapısı sayesinde ölçeklendirmesi kolaydır.  
+- **Performans:** HTTP önbellekleme desteği sayesinde performansı artırır.  
+- **Esneklik:** Farklı veri formatlarını (JSON, XML vb.) destekler.  
+- **Geniş Kullanım:** Birçok büyük şirket ve uygulama REST API’leri tercih eder (Google, Facebook, Twitter vb.).
+
+### Dezavantajları
+
+- **Durumsuzluk Sınırlaması:** Sunucu önceki isteklerin bilgisini tutmadığı için bazı durumlarda istemcinin daha fazla veri göndermesi gerekir.  
+- **Standart Eksikliği:** REST için resmi standart yoktur; bu da uygulamalar arasında uyumsuzluklara yol açabilir.  
+- **Güvenlik:** TLS gibi güvenlik katmanları eklenmezse, temel iletişim güvenliği SOAP’a göre daha zayıf olabilir.  
+- **Yüksek Karmaşıklık:** Büyük ve karmaşık işlemler için REST bazen yetersiz kalabilir, bu durumda GraphQL gibi alternatiflere ihtiyaç doğabilir.
+
+  ## Gerçek Hayatta REST API Kullanım Örnekleri
+
+REST API’ler günümüzde birçok popüler uygulama ve hizmet tarafından yaygın şekilde kullanılmaktadır. İşte bazı örnekler:
+
+- **Sosyal Medya Platformları**  
+
+- **Bulut Hizmetleri**  
+ 
+- **E-Ticaret Siteleri**  
+
+- **Harita ve Konum Servisleri**  
+  
+- **Ödeme Sistemleri**  
+
+
+[https://medium.com/mobillium/rest-api-restful-api-nedir-b45b32ab4a12]
+
+[https://www.geeksforgeeks.org/node-js/rest-api-introduction/]
 
 
 
