@@ -42,7 +42,8 @@ Sunucu ve İstemci arasında internet adresi üzerinden bağlantı kurmak ve ver
 
 
 ##SOAP Nedir
-Basit Nesne Erişim Protokolü dağıtık yapıda bulunan web servislerinin iletişimi gerçekleştirmek üzere kullanılır. Sunucu – İstemci mantığında çalışan bir protokoldür.RPC (Remote Procedure Call) modelini kullananır.Veri iletimlerinde ise XML formatı kullanılır
+Basit Nesne Erişim Protokolü dağıtık yapıda bulunan web servislerinin iletişimi gerçekleştirmek üzere kullanılır. Sunucu – İstemci mantığında çalışan bir protokoldür.RPC (Remote Procedure Call) modelini 
+kullananır.Veri iletimlerinde ise XML formatı kullanılır
 
 
 ## HTTP Protokolü ve REST API İlişkisi
@@ -55,7 +56,7 @@ REST API’ler HTTP’nin aşağıdaki temel bileşenlerini kullanarak çalış�
 
 - **URI:** Her kaynak benzersiz bir URI ile tanımlanır.
 
-- **HTTP Durum Kodları:** REST API işlemlerin sonucunu belirtmek için HTTP durum kodlarını kullanır.Bu kodlar 200 Başarılı,401 Hatalı veri gönderildi ,404 Bulunamadı ,500 Sunucu hatası gibidir. Bu kodlar istemciye yapılan işlemin başarılı mı başarısız mı olduğunu belirtir.
+- **HTTP Durum Kodları:** REST API işlemlerin sonucunu belirtmek için HTTP durum kodlarını kullanır.Bu kodlar 200 Başarılı, 401 Hatalı veri gönderildi ,404 Bulunamadı ,500 Sunucu hatası gibidir. Bu kodlar istemciye yapılan işlemin başarılı mı başarısız mı olduğunu belirtir.
 
 - **Veri Formatları:** REST API’de veri formatı olarak JSON veya XML kullanılır. JSON kullanımı daha yaygındır çünkü daha hafif ve okunması kolaydır.
 
@@ -104,7 +105,7 @@ Bu yapı sayesinde REST API’ler, basit, anlaşılır ve platformdan bağımsı
 - **Durumsuzluk Sınırlaması:** Sunucu önceki isteklerin bilgisini tutmadığı için bazı durumlarda istemcinin daha fazla veri göndermesi gerekir.  
 - **Standart Eksikliği:** REST için resmi standart yoktur; bu da uygulamalar arasında uyumsuzluklara yol açabilir.  
 - **Güvenlik:** TLS gibi güvenlik katmanları eklenmezse, temel iletişim güvenliği SOAP’a göre daha zayıf olabilir.  
-- **Yüksek Karmaşıklık:** Büyük ve karmaşık işlemler için REST bazen yetersiz kalabilir, bu durumda GraphQL gibi alternatiflere ihtiyaç doğabilir.
+- **Yüksek Karmaşıklık:** Büyük ve karmaşık işlemler için REST bazen yetersiz kalabilir.
 
   # REST API'de Content-Type Kullanımı
 
@@ -114,10 +115,10 @@ Bu yapı sayesinde REST API’ler, basit, anlaşılır ve platformdan bağımsı
 
 ## Yaygın Content-Type Değerleri
 
-| Content-Type                         | Açıklama                                              | Örnek Veri                             |
-|-------------------------------------|-------------------------------------------------------|----------------------------------------|
-| `application/json`                  | JSON formatında veri                                  | `{ "name": "Duygu", "age": 22 }`       |
-| `application/xml`                   | XML formatında veri                                   | `<user><name>Duygu</name></user>`      |
+| Content-Type                         | Açıklama                                             |  
+|-------------------------------------|-------------------------------------------------------|
+| `application/json`                  | JSON formatında veri                                  | 
+| `application/xml`                   | XML formatında veri                                   |       
                                                    
 ##Accept Nedir?
 
