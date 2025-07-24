@@ -150,8 +150,6 @@ Bu yapı sayesinde REST API’ler, basit, anlaşılır ve platformdan bağımsı
 
 [https://medium.com/mobillium/rest-api-restful-api-nedir-b45b32ab4a12]
 
-[https://www.geeksforgeeks.org/node-js/rest-api-introduction/]
-
 [https://www.hosting.com.tr/bilgi-bankasi/rest-api/]
 
 
