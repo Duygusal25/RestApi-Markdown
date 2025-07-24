@@ -5,77 +5,84 @@ REST, client-server arasındaki haberleşmeyi sağlayan ,web servislerinin nası
 ## REST API’nin Temel Özellikleri
 
 - Daha az bant genişliği ve kaynak tükettikleri için hızlı web servisleridir.  
-- REST herhangi bir programlama dilinde yazılabilir.  
-- Bu servisler herhangi bir platformda yürütülebilir.  
-- REST mimarisi üzerine kurulmuş hafif ve ölçeklenebilir bir hizmettir.  
-- CRUD (Create, Read, Update, Delete) yani oluştur, oku, güncelle ve sil işlemleri için GET, POST, DELETE, PUT ve PATCH gibi HTTP fiillerini kullanır.  
-- TLS (Transport Layer Security) yani taşıma katmanı güvenliği aracılığıyla temel iletişim şifrelemelerini destekler, bu nedenle SOAP’tan daha az güvenlidir.  
-- Geliştirmek daha basittir.  
-- SOAP ile karşılaştırıldığında daha az bant genişliği gerektirir.  
+- REST herhangi bir programlama dilinde yazılabilir ve herhangi bir plartformada yürütülebilir.   
+- REST mimarisi üzerine kurulmuş ölçeklenebilir bir hizmettir.  
+- CRUD işlemleri, web servislerinde POST, GET, PUT, PATCH ve DELETE gibi HTTP yöntemleriyle yapılır.
+- İnternet üzerindeki veri iletişimini şifreliyerek koruyan bir güvenlik protokolü olan TLS ile şifreleme sağlar. 
+- Geliştirmek daha basittir.
 
- ## REST Mimarisi ve Temel İlkeleri
+ CRUD işlemleri veri tabanlı sistemlerde gerçekleştirilen dört temel işlemi ifade eder. 
 
-REST mimarisi; kaynak odaklı, basit ve HTTP protokolü üzerine kurulu bir yapıdır. REST API'ler bu mimarinin belirli ilkelerine uyarak geliştirilir.
+ – Create (Oluştur): Yeni veri eklemek için kullanılır.
+ 
+ – Read (Oku): Var olan verileri okumak için kullanılır.
+ 
+ – Update (Güncelle): Var olan verileri güncellemek için kullanılır.
+ 
+ – Delete (Sil): Var olan verileri silmek için kullanılır.   
 
-### REST'in Temel İlkeleri:
+REST mimarisi kaynak odaklı, basit ve HTTP protokolü üzerine kurulu bir yapıdır. REST API'ler bu mimarinin kurallarına göre oluşturulur.
 
-- **İstemci-Sunucu (Client-Server) Ayrımı:**  
-  Kullanıcı arayüzü (istemci) ile veri saklama ve işleme (sunucu) birbirinden ayrıdır. Bu sayede sistem bileşenleri bağımsız şekilde geliştirilebilir.
+##HTTP Nedir
+Sunucu ve İstemci arasında internet adresi üzerinden bağlantı kurmak ve veri alışverişi için kullanılan bir TCP/IP protokolüdür.
 
-- **Durumsuzluk (Stateless):**  
+### REST'in Temel Özellikleri:
+
+- **İstemci-Sunucu Ayrımı:**  
+  Kullanıcı arayüzü ile veri saklama ve işleme birbirindn ayrıdır. Bu sayede sistem bileşenleri bağımsız şekilde geliştirilebilir.
+
+- **Stateless:**  
   Sunucu, her gelen isteği birbirinden bağımsız değerlendirir. Yani önceki isteklerin bilgisini tutmaz. Her istek, gerekli tüm bilgileri içermelidir.
 
-- **Önbellekleme (Caching):**  
+- **Önbellekleme:**  
   Veriler önbelleğe alınabilir. Bu sayede aynı verilere tekrar erişilmesi gerektiğinde sunucuya yük binmeden hızlı cevap alınabilir.
 
-- **Tekdüzen Arayüz (Uniform Interface):**  
-  Tüm kaynaklara erişim standart ve tutarlı yollarla yapılır. Bu, sistemi daha basit ve anlaşılır kılar.
+- **Tekdüzen Arayüz:**  
+  Tüm kaynaklara erişim standart yollarla yapılır. Bu sistemi daha basit ve anlaşılır kılar.
 
-- **Katmanlı Sistem (Layered System):**  
-  Sistemin bileşenleri katmanlara ayrılabilir (örneğin: güvenlik katmanı, yük dengeleme katmanı vb.). İstemci, sunucuya doğrudan mı yoksa ara katmanlar aracılığıyla mı eriştiğini bilmez.
 
+##SOAP Nedir
+Basit Nesne Erişim Protokolü dağıtık yapıda bulunan web servislerinin iletişimi gerçekleştirmek üzere kullanılır. Sunucu – İstemci mantığında çalışan bir protokoldür.RPC (Remote Procedure Call) modelini kullananır.Veri iletimlerinde ise XML formatı kullanılır
 
 
 ## HTTP Protokolü ve REST API İlişkisi
 
-REST API, HTTP protokolü üzerinde çalışan bir mimaridir. HTTP, istemci (client) ile sunucu (server) arasında veri iletişimini sağlayan temel protokoldür ve REST mimarisi bu protokolün sunduğu standartları kullanır.
+REST API, HTTP protokolü üzerinde çalışan bir mimaridir. HTTP istemci ile sunucu arasında veri iletişimini sağlayan temel protokoldür ve REST mimarisi bu protokolün sunduğu kuralları kullanır.
 
-REST API’ler, HTTP’nin aşağıdaki temel bileşenlerini kullanarak çalışır:
+REST API’ler HTTP’nin aşağıdaki temel bileşenlerini kullanarak çalışır:
 
-- **HTTP Yöntemleri:** REST, HTTP’nin GET, POST, PUT, DELETE, PATCH gibi metodlarını kullanarak kaynaklar üzerinde işlem yapar. Bu yöntemler sayesinde CRUD işlemleri gerçekleştirilir.
+- **HTTP Yöntemleri:** REST, HTTP’nin GET, POST, PUT, DELETE, PATCH gibi metodlarını kullanır. Bu yöntemler sayesinde CRUD işlemleri gerçekleştirilir.
 
-- **URI (Uniform Resource Identifier):** Her kaynak benzersiz bir URI ile tanımlanır. Örneğin, bir kullanıcı bilgisine erişmek için `/users/123` gibi bir adres kullanılır.
+- **URI:** Her kaynak benzersiz bir URI ile tanımlanır.
 
-- **HTTP Durum Kodları:** REST API, işlemlerin sonucunu belirtmek için HTTP durum kodlarını (200 BAşarılı, 201 Hatalı veri gönderildi, 404 Bulunamadı, 500 Sunucu hatası vb.) kullanır. Bu, istemciye yapılan işlemin başarılı mı, başarısız mı olduğunu bildirir.
+- **HTTP Durum Kodları:** REST API işlemlerin sonucunu belirtmek için HTTP durum kodlarını kullanır.Bu kodlar 200 Başarılı,401 Hatalı veri gönderildi ,404 Bulunamadı ,500 Sunucu hatası gibidir. Bu kodlar istemciye yapılan işlemin başarılı mı başarısız mı olduğunu belirtir.
 
-- **Veri Formatları:** REST API’lerde genellikle veri formatı olarak JSON veya XML kullanılır. Ancak günümüzde JSON daha yaygındır çünkü daha hafif ve okunması kolaydır.
+- **Veri Formatları:** REST API’de veri formatı olarak JSON veya XML kullanılır. JSON kullanımı daha yaygındır çünkü daha hafif ve okunması kolaydır.
 
 REST API ile HTTP protokolü birlikte çalışarak web servislerinde basit, anlaşılır ve platformlar arası uyumlu bir iletişim modeli sunar.
 
 ## REST API Nasıl Çalışır?
 
-REST API, istemci (client) ile sunucu (server) arasında HTTP protokolü aracılığıyla veri alışverişi yaparak çalışır. Bu yapıdaki temel amaç, kaynaklara (örneğin kullanıcılar, ürünler, siparişler) erişim sağlamaktır.
+REST API, istemci ile sunucu arasında HTTP protokolü kullanarak veri alışverişi yapar. Bu yapıdaki temel amaç, kaynaklara erişim sağlamaktır.
 
-Çalışma mantığı genel olarak şu adımlarla gerçekleşir:
+1. **İstemci isteği göndermesi:**  
+   Kullanıcı bir uygulama aracılığıyla bir işlem yapmak istediğinde istemci bir HTTP isteği oluşturur. Bu istek bir URI adresine yöneltilir.
 
-1. **İstemci isteği gönderir:**  
-   Kullanıcı bir uygulama aracılığıyla bir işlem yapmak istediğinde (örneğin bir ürün listesini görmek), istemci belirli bir HTTP isteği oluşturur. Bu istek genellikle bir URI adresine yöneltilir.
-
-2. **HTTP yöntemi belirlenir:**  
-   Yapılacak işleme göre uygun HTTP yöntemi (GET, POST, PUT, DELETE vb.) kullanılır:
+2. **HTTP yöntemi belirlenmesi:**  
+   Yapılacak işleme göre uygun HTTP yöntemi kullanılır:
    - `GET` → Veri okuma  
    - `POST` → Yeni veri oluşturma  
-   - `PUT` → Mevcut veriyi güncelleme  
-   - `DELETE` → Veriyi silme  
+   - `PUT` → Var olan veriyi güncelleme  
+   - `DELETE` → Veriyi silmek için kullanılır  
 
 3. **Sunucu isteği işler:**  
-   Sunucu, gelen isteği alır, işler ve istenilen kaynağı veritabanından alır, günceller ya da siler.
+   Sunucu, gelen isteği alır, işler ve istenileni veritabanından alır, günceller ya da siler.
 
 4. **Cevap döner:**  
-   Sunucu, işlenen verinin sonucunu istemciye genellikle JSON formatında geri gönderir. Ayrıca işlem sonucu hakkında bilgi veren bir HTTP durum kodu da iletilir (örneğin: `200 OK`, `404 Not Found`, `201 Created`).
+   Sunucu işlenen veriyi istemciye genellikle JSON formatında gönderir. Ayrıca işlem sonucu hakkında bilgi veren bir HTTP durum kodu da iletilir.
 
 5. **İstemci gelen veriyi işler:**  
-   İstemci, sunucudan dönen yanıtı kullanıcıya sunar ya da arka planda kullanır.
+   İstemci, sunucudan dönen yanıtı kullanıcıya sunar.
 
 Bu yapı sayesinde REST API’ler, basit, anlaşılır ve platformdan bağımsız olarak çalışabilir hale gelir.
 
@@ -85,13 +92,13 @@ Bu yapı sayesinde REST API’ler, basit, anlaşılır ve platformdan bağımsı
 
 ### Avantajları
 
-- **Basit ve Hafif:** REST, HTTP protokolünün standartlarını kullanır; bu nedenle öğrenmesi ve uygulaması kolaydır.  
+- **Basit ve Hafif:** REST, HTTP protokolünün standartlarını kullanır bu da öğrenmesini ve uygulanmasını kolaylaştırır.  
 - **Platform Bağımsızlığı:** REST API’ler herhangi bir programlama dili ve platformda çalışabilir.  
-- **Ölçeklenebilirlik:** Durumsuz (stateless) yapısı sayesinde ölçeklendirmesi kolaydır.  
+- **Ölçeklenebilirlik:** Ölçeklendirmesi kolaydır.  
 - **Performans:** HTTP önbellekleme desteği sayesinde performansı artırır.  
-- **Esneklik:** Farklı veri formatlarını (JSON, XML vb.) destekler.  
-- **Geniş Kullanım:** Birçok büyük şirket ve uygulama REST API’leri tercih eder (Google, Facebook, Twitter vb.).
+- **Esneklik:** Farklı veri formatlarını destekler.  
 
+  
 ### Dezavantajları
 
 - **Durumsuzluk Sınırlaması:** Sunucu önceki isteklerin bilgisini tutmadığı için bazı durumlarda istemcinin daha fazla veri göndermesi gerekir.  
@@ -99,9 +106,33 @@ Bu yapı sayesinde REST API’ler, basit, anlaşılır ve platformdan bağımsı
 - **Güvenlik:** TLS gibi güvenlik katmanları eklenmezse, temel iletişim güvenliği SOAP’a göre daha zayıf olabilir.  
 - **Yüksek Karmaşıklık:** Büyük ve karmaşık işlemler için REST bazen yetersiz kalabilir, bu durumda GraphQL gibi alternatiflere ihtiyaç doğabilir.
 
-  ## Gerçek Hayatta REST API Kullanım Örnekleri
+  # REST API'de Content-Type Kullanımı
 
-REST API’ler günümüzde birçok popüler uygulama ve hizmet tarafından yaygın şekilde kullanılmaktadır. İşte bazı örnekler:
+## Content-Type Nedir?
+
+`Content-Type`  sunucuya veya istemciye gönderilen verinin **hangi formatta** olduğunu belirtir. REST API'de veri gönderimi sırasında sıklıkla kullanılır.
+
+## Yaygın Content-Type Değerleri
+
+| Content-Type                         | Açıklama                                              | Örnek Veri                             |
+|-------------------------------------|-------------------------------------------------------|----------------------------------------|
+| `application/json`                  | JSON formatında veri                                  | `{ "name": "Duygu", "age": 22 }`       |
+| `application/xml`                   | XML formatında veri                                   | `<user><name>Duygu</name></user>`      |
+                                                   
+##Accept Nedir?
+
+`Accept` istemcinin sunucudan **hangi formatta veri almak istediğini** belirtir.  
+
+## Yaygın Accept Başlıkları
+
+| Accept Değeri            | Açıklama                                 |
+|--------------------------|------------------------------------------|
+| `application/json`       | JSON formatında yanıt beklenir           |
+| `application/xml`        | XML formatında yanıt beklenir            |
+
+
+
+  ## Gerçek Hayatta REST API Kullanım Alanları
 
 - **Sosyal Medya Platformları**  
 
@@ -113,11 +144,13 @@ REST API’ler günümüzde birçok popüler uygulama ve hizmet tarafından yayg
   
 - **Ödeme Sistemleri**  
 
+##Kaynakça
 
 [https://medium.com/mobillium/rest-api-restful-api-nedir-b45b32ab4a12]
 
 [https://www.geeksforgeeks.org/node-js/rest-api-introduction/]
 
+[https://www.hosting.com.tr/bilgi-bankasi/rest-api/]
 
 
 
